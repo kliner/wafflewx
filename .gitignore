@@ -1,0 +1,24 @@
+# mac:
+.DS_Store
+
+# temp file:
+img.jpg
+captcha.jpg
+
+# vim:
+*.swp
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# other
+test*.py
+.pypirc
+MANIFEST
+*.log
+*.log.*
