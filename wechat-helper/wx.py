@@ -85,10 +85,16 @@ def qr():
 
 @app.route("/login")
 def login():
+    def qr_callback(uuid, status, qrcode):
+        #print(uuid, status, qrcode)
+        with open(IMG_PATH, 'wb') as f:
+            f.write(qrcode)
+            print('update qrcode to file')
+
     global bot
     if bot == 0: 
         bot = 1
-        bot = Bot(qr_path=IMG_PATH)
+        bot = Bot(qr_path=IMG_PATH, console_qr=True, qr_callback=qr_callback)
         return 'success'
     else:
         return 'logout first'
